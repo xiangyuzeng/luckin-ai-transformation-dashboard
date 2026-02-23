@@ -81,35 +81,6 @@ const USE_CASES = [
 ];
 
 // ═══════════════════════════════════════════════════════════════
-// LIVE DEMO LINKS (from past Vercel/Netlify deployments)
-// ═══════════════════════════════════════════════════════════════
-const DEMO_PROJECTS = [
-  { category: "🏗️ 基础设施与监控", items: [
-    { name: "数据库架构探索指南", desc: "iluckyhealth 14张表完整ER文档、指标字典、SQL查询模板、数据流映射", url: "https://iluckyhealth-guide.vercel.app/", tech: "Next.js + Tailwind", uc: "IT-01" },
-    { name: "运维周报导航门户", desc: "整合4大周报子仪表板的交互式导航：指标趋势、告警、慢查询、根因分析", url: "https://1225weeklyreportv2.vercel.app/", tech: "React + Vite", uc: "IT-01" },
-    { name: "运维指标周趋势分析", desc: "CPU、连接数、存储等核心指标5周趋势追踪，NAT网关流量与容量监控", url: "https://1225devopsindextrendanalysis.vercel.app/", tech: "React + Recharts", uc: "IT-01" },
-    { name: "运维告警可视化分析", desc: "iZeus(宙斯)监控平台12/17-12/25告警数据，告警类型/等级/时间分布深度分析", url: "https://1225alertvisualizationdashboard.vercel.app/", tech: "React + Recharts", uc: "IT-01" },
-    { name: "慢查询分析报告", desc: "MySQL慢查询双重排名法(执行时间×次数)，完整SQL语句及索引优化建议", url: "https://1223slowqueryanalyticdashboard.vercel.app/", tech: "React + Recharts", uc: "IT-01" },
-    { name: "运维根因分析报告", desc: "关键告警根因分析(RCA)，风险评估矩阵，RDS实例规划与扩容建议", url: "https://1225devopsanalyticdashboard.vercel.app/", tech: "React + Recharts", uc: "IT-01" },
-    { name: "IT服务门户 & AIGC视频平台", desc: "内部IT服务请求系统 + AI视频生成平台(Veo 3.1)，服务于市场部内容创作", url: "https://itserviceportalv2.vercel.app/", tech: "Next.js", uc: "IT-05/MK" },
-  ]},
-  { category: "📊 跨部门综合分析", items: [
-    { name: "多项目分析总门户", desc: "营销效果分析、财务对账、产品客制化偏好、门店绩效等多维度分析集合", url: "https://luckincoffeeprojectdemo.netlify.app/", tech: "React + Recharts", uc: "多部门" },
-    { name: "运维周报数据可视化", desc: "icapi/isapi域名QPS、响应时间、可用率、NAT网关等核心指标图表化报告", url: "https://luckincoffee12-25weekreport.netlify.app/", tech: "HTML + Chart.js", uc: "IT-01" },
-  ]},
-  { category: "🔬 AI用例项目演示", items: [
-    { name: "UC-SC-01 需求预测精度监控", desc: "14天×10店×88 SKU预测vs实际对比、MAPE/MAE分析、门店+SKU维度钻取", url: "#deploy-uc-sc-01", tech: "Vite + Chart.js", uc: "SC-01" },
-    { name: "UC-SC-02 废弃预测与减少", desc: "8源库ETL架构、加权集成预测模型、批次风险评分(0-100)、调拨优化", url: "#deploy-uc-sc-02", tech: "Vite + Recharts", uc: "SC-02" },
-    { name: "UC-FN-02 营收对账自动化", desc: "4库对账架构(salesorder+payment+settlement+cyberdata)、3级匹配逻辑、异常检测", url: "#deploy-uc-fn-02", tech: "Vite + Recharts", uc: "FN-02" },
-    { name: "UC-OP-06 新店开业流量分析", desc: "21st & 3rd开业日分析，全部门店开业曲线对比，4周成熟期模型", url: "#deploy-uc-op-06", tech: "Next.js + Recharts", uc: "OP-06" },
-  ]},
-  { category: "📈 市场与产品专项", items: [
-    { name: "北美咖啡市场研究", desc: "$108B市场规模分析、竞争格局(Starbucks/Dunkin')、消费趋势、差异化策略", url: "#deploy-market", tech: "Vite + React", uc: "EX-04" },
-    { name: "产品客制化偏好分析", desc: "大杯刚需(73%)、生椰基石(48%)、少冰痛点等，基于订单数据的菜单工程洞察", url: "#deploy-customize", tech: "Vite + React", uc: "PR-01" },
-  ]},
-];
-
-// ═══════════════════════════════════════════════════════════════
 // COMPUTED STATISTICS
 // ═══════════════════════════════════════════════════════════════
 const STATS = {
@@ -301,7 +272,6 @@ export default function Dashboard() {
     { id: "OP", label: "🏪 运营" },
     { id: "SC", label: "📦 供应链" },
     { id: "EX", label: "👔 高管" },
-    { id: "demos", label: "🔗 演示链接" },
     { id: "roadmap", label: "🗺️ 路线图" },
   ];
 
@@ -334,10 +304,18 @@ export default function Dashboard() {
         <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
           <span style={{ color: L.white, fontSize: 18, fontWeight: 900, letterSpacing: 1 }}>luckin coffee</span>
         </div>
-        <div style={{ color: "rgba(255,255,255,0.85)", fontSize: 12 }}>
-          <span style={{ fontWeight: 700 }}>41个AI转型用例报告</span>
-          <span style={{ margin: "0 8px", opacity: 0.4 }}>·</span>
-          <span>Manhattan 10店 · 2026年2月</span>
+        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+          <div style={{ color: "rgba(255,255,255,0.85)", fontSize: 12 }}>
+            <span style={{ fontWeight: 700 }}>41个AI转型用例报告</span>
+            <span style={{ margin: "0 8px", opacity: 0.4 }}>·</span>
+            <span>Manhattan 10店 · 2026年2月</span>
+          </div>
+          <a href="https://luckin-ai-demo.vercel.app/" target="_blank" rel="noopener noreferrer"
+            style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "8px 18px", background: "linear-gradient(135deg, #FFD700, #FFA500)", color: "#1A1A2E", fontSize: 13, fontWeight: 800, borderRadius: 8, textDecoration: "none", boxShadow: "0 2px 10px rgba(255,215,0,0.4)", transition: "all 0.2s", border: "none", cursor: "pointer", whiteSpace: "nowrap" }}
+            onMouseOver={e => { e.currentTarget.style.transform = "translateY(-1px)"; e.currentTarget.style.boxShadow = "0 4px 16px rgba(255,215,0,0.6)"; }}
+            onMouseOut={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 2px 10px rgba(255,215,0,0.4)"; }}>
+            🚀 AI项目演示
+          </a>
         </div>
       </div>
 
@@ -519,46 +497,6 @@ export default function Dashboard() {
 
 {/* ═══════ DEPARTMENT TABS ═══════ */}
 {["IT","MK","FN","PR","OP","SC","EX"].includes(tab) && renderDeptTab(tab)}
-
-{/* ═══════ DEMOS TAB ═══════ */}
-{tab === "demos" && <div>
-  <SH sub="已部署的交互式仪表板和分析报告 — 点击链接查看在线演示">🔗 已完成的AI项目演示</SH>
-
-  {DEMO_PROJECTS.map((cat, ci) => (
-    <div key={ci} style={{ marginBottom: 24 }}>
-      <div style={{ fontSize: 15, fontWeight: 700, color: L.text, marginBottom: 12, paddingBottom: 8, borderBottom: `1px solid ${L.borderLight}` }}>{cat.category}</div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(340px,1fr))", gap: 12 }}>
-        {cat.items.map((item, ii) => (
-          <a key={ii} href={item.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
-            <div style={{ background: L.white, border: `1px solid ${L.border}`, borderRadius: 12, padding: 16, transition: "all 0.2s", cursor: "pointer" }}
-              onMouseOver={e => { e.currentTarget.style.borderColor = L.blue; e.currentTarget.style.boxShadow = `0 4px 16px ${L.blue}15`; }}
-              onMouseOut={e => { e.currentTarget.style.borderColor = L.border; e.currentTarget.style.boxShadow = "none"; }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
-                <div style={{ fontSize: 14, fontWeight: 700, color: L.text }}>{item.name}</div>
-                <Badge text={item.uc} color={L.blue} />
-              </div>
-              <div style={{ fontSize: 12, color: L.textSec, lineHeight: 1.6, marginBottom: 10 }}>{item.desc}</div>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <span style={{ fontSize: 10, color: L.textLight }}>{item.tech}</span>
-                <span style={{ fontSize: 11, fontWeight: 700, color: L.blue }}>
-                  {item.url.startsWith("http") ? "🌐 在线访问 →" : "📦 待部署"}
-                </span>
-              </div>
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  ))}
-
-  <Card style={{ background: "#FFFBEB", borderColor: "#D97706" }}>
-    <div style={{ fontSize: 13, fontWeight: 700, color: L.text, marginBottom: 8 }}>💡 如何更新演示链接</div>
-    <div style={{ fontSize: 12, color: L.textSec, lineHeight: 1.8 }}>
-      标记为"待部署"的项目已有完整代码，只需推送到GitHub → Vercel自动部署。
-      部署完成后，在 <code style={{ background: L.bg, padding: "2px 6px", borderRadius: 4, fontSize: 11 }}>Dashboard.jsx</code> 的 <code style={{ background: L.bg, padding: "2px 6px", borderRadius: 4, fontSize: 11 }}>DEMO_PROJECTS</code> 数组中更新URL即可。
-    </div>
-  </Card>
-</div>}
 
 {/* ═══════ ROADMAP TAB ═══════ */}
 {tab === "roadmap" && <div>
